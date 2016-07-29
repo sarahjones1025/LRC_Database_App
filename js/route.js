@@ -7,10 +7,20 @@ lrcApp.config(function ($routeProvider) {
             controller : 'mainController'
         })
 
-        // .when('/show', {
-        //     templateUrl : 'views/show.html',
-        //     controller : 'showController'            
-        // })
+        .when('/ags', {
+            templateUrl : 'views/ags.html',
+            controller : 'agsController'            
+        })
+
+         .when('/fms', {
+            templateUrl : 'views/fms.html',
+            controller : 'fmsController'            
+        })
+
+          .when('/ncoa', {
+            templateUrl : 'views/ncoa.html',
+            controller : 'ncoaController'            
+        })
 });
 
 
