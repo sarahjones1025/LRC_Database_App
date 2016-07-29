@@ -1,7 +1,7 @@
-var app = angular.module('app', ['ngRoute']);
+var lrcApp = angular.module('lrcApp', ['ngRoute']);
 app.config(function ($routeProvider) {
-    $routeProvider
-        .when('/', {
+    $routeProvider.
+        when('/', {
             templateUrl: 'views/home.html',
             controller: 'mainController',
             resolve: {
@@ -12,3 +12,5 @@ app.config(function ($routeProvider) {
             }
         });
 });
+
+
