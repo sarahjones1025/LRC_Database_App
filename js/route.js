@@ -1,16 +1,16 @@
 var lrcApp = angular.module('lrcApp', ['ngRoute']);
-app.config(function ($routeProvider) {
-    $routeProvider.
-        when('/', {
-            templateUrl: 'views/home.html',
-            controller: 'mainController',
-            resolve: {
-                app: function () {
-                    window.scrollTo(0, 0);
-                    $('#pageTitle').html('HOME');
-                }
-            }
-        });
+
+lrcApp.config(function ($routeProvider) {
+    $routeProvider
+        .when('/', {
+            templateUrl : 'views/main.html',
+            controller : 'mainController'
+        })
+
+        // .when('/show', {
+        //     templateUrl : 'views/show.html',
+        //     controller : 'showController'            
+        // })
 });
 
 

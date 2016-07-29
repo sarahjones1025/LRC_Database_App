@@ -1,10 +1,8 @@
-app.controller('indexController', function($scope) {
-});
+// lrcApp.controller('indexController', function($scope) {
+// });
 
-app.controller('mainController', function($scope) {
+// lrcApp.controller('mainController', function($scope) {
+// });
 
-});
-
-app.controller('childController', function($scope) {
-    
-});
+// lrcApp.controller('childController', function($scope) {
+// });
