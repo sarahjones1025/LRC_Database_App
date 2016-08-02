@@ -1,61 +1,73 @@
-var contents      = $( ".contents" );
-var toggleButton  = $( ".toggle_button" );
-var lessonResults = $(".lesson_results");
-var lessonList = $(".lesson_list");
+var contents      = $( '.contents' );
+var toggleButton  = $( '.toggle_button' );
+var lessonResults = $( '.lesson_results' );
+var lessonList    = $( '.lesson_list' );
 
 //Clears all options (unchecks checkboxes)
 $('#clearFilter').click(function(e){
 
-	$('input:checkbox').each(function(){
-		$(this).prop('checked', false);
-	});
+    $('input:checkbox').each(function(){
+        $(this).prop('checked', false);
+    });
 
     lessonList.empty();
-	
+    
 });
+
+// contents.hide(); not working!!!
 
 //Expands and hides ul which gives list of available options
-toggleButton.on( "click", function( e ){
+// toggleButton.on( "click", function( e ){
 
-    var padres = $( this ).parent();
+//     var padres = $( this ).parent();
 
-    padres.toggleClass('active');
+//     padres.toggleClass('active');
 
-    $('.main_selector').not(padres).removeClass('active');
+//     $('.main_selector').not(padres).removeClass('active');
 
-    var selector = $( this ).data( "contents" );
+//     var selector = $( this ).data( "contents" );
  
-	contents.not(selector).hide();
+//     contents.not(selector).hide();
 
-    $( selector ).fadeToggle( 100 );
+//     $( selector ).fadeToggle( 100 );
 
-    if ( $( window ).height() < 600 ){
-		$( document.body ).scrollTop( $( selector ).offset().top - 130 );
-    }
+//     if ( $( window ).height() < 600 ){
+//         $( document.body ).scrollTop( $( selector ).offset().top - 130 );
+//     }
 
-    e.preventDefault();
+//     e.preventDefault();
 
-} );
+// } );
 
+// $(document).load(function( e ){
+//     console.log( "Hide those ULs!" );
+//     $('.contents').hide();
+// });
 
-$(window).load(function() {
-    $('.contents').hide();
-});
+// this is a temporary solution for visibility until I can wrap this in a directive
+// $(document).load(function() {
+//     setTimeout(function() {
 
-// contents.hide();
+//         $('.contents').hide();
+
+//     }, 200);
+// });
+
 
 //Collapses all (.contents) if mouseclicks anywhere on page except within (.query)
 $(document.body).on('click', function ( e ){
+   
+    
+    if (!$('.query').has(e.target).length > 0){
 
-	if (!$('.query').has(e.target).length > 0){
-		$('.contents').hide();
+        $('.contents').hide();
         $('.main_selector').removeClass('active');
-	}
+    }
 
 });
 
 
-$(document).ready(function(){
+ $(document).ready(function(){
     $("input:checkbox").click(function(){
         if ($(this).is(':checked'))
         {

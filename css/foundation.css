@@ -14,9 +14,9 @@ body {
   font: 16px/1 $sans-serif;
 }
 
-* {
+/** {
   box-sizing: border-box;
-}
+}*/
 iframe {
   border: 0;
 }
