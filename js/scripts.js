@@ -1,5 +1,3 @@
-var contents      = $( '.contents' );
-var toggleButton  = $( '.toggle_button' );
 var lessonResults = $( '.lesson_results' );
 var lessonList    = $( '.lesson_list' );
 
@@ -14,53 +12,39 @@ $('#clearFilter').click(function(e){
     
 });
 
-// contents.hide(); not working!!!
 
-//Expands and hides ul which gives list of available options
-// toggleButton.on( "click", function( e ){
 
-//     var padres = $( this ).parent();
+//Expands and hides ul which gives list of available options *****BEING HANDLED IN CONTROLLER*****
+// $('.toggleButton').on( "click", function( e ){
 
-//     padres.toggleClass('active');
+//     console.log("hi");
 
-//     $('.main_selector').not(padres).removeClass('active');
+//     var listExpander = $( this ).parent();
+//     var contents     = $( '.contents' );
+//     var listSelector = $( this ).data( 'contents' );
 
-//     var selector = $( this ).data( "contents" );
- 
-//     contents.not(selector).hide();
+//     listExpander.toggleClass('active');
 
-//     $( selector ).fadeToggle( 100 );
+//     $('.main_selector').not(listExpander).removeClass('active');
+
+//     contents.not(listSelector).hide();
+
+//     $( listSelector ).fadeToggle( 100 );
 
 //     if ( $( window ).height() < 600 ){
-//         $( document.body ).scrollTop( $( selector ).offset().top - 130 );
+//         $( document.body ).scrollTop( $( listSelector ).offset().top - 130 );
 //     }
 
 //     e.preventDefault();
 
 // } );
 
-// $(document).load(function( e ){
-//     console.log( "Hide those ULs!" );
-//     $('.contents').hide();
-// });
-
-// this is a temporary solution for visibility until I can wrap this in a directive
-// $(document).load(function() {
-//     setTimeout(function() {
-
-//         $('.contents').hide();
-
-//     }, 200);
-// });
-
-
 //Collapses all (.contents) if mouseclicks anywhere on page except within (.query)
 $(document.body).on('click', function ( e ){
    
-    
     if (!$('.query').has(e.target).length > 0){
 
-        $('.contents').hide();
+        // $('.contents').hide();
         $('.main_selector').removeClass('active');
     }
 

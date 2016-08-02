@@ -4,7 +4,7 @@
 		<a href="#/ags"><img src="img/ags.png"></a>
 		<h1>Adjutant General School Database</h1>
 	</header>
-	<div class="wrapper">	
+	<div ng-controller="DropdownCtrl" class="wrapper">	
 		<div class="breadcrumb clearfix">
 			<h3 class="instructions">Select a search criterion</h3>
 			<button id="clearFilter" class="clear_filter">clear all filters</button> <!-- this will un-check all options --> 
@@ -12,8 +12,8 @@
 		<div class="query">
 			<div class="main_selector box_1">
 				<h2 class="criterion_title">Course</h2>
-				<button class="toggle_button" data-contents=".item_1"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_1"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide()" class="toggle_button" data-contents=".item_1"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe1" class="contents item_1"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="course_1" value=""><label for="course_1">Brigade S-1</label></li>
 					<li><input type="checkbox" id="course_2" value=""><label for="course_2">Executive Admin Assistant (E3)</label></li>
@@ -32,8 +32,8 @@
 			</div>
 			<div class="main_selector box_2">
 				<h2>Core Competency</h2>
-				<button class="toggle_button" data-contents=".item_2"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_2">
+				<button ng-click="showHide2()" class="toggle_button" data-contents=".item_2"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe2" class="contents item_2">
 				<!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="core_competency_1" name="core_competency_1" value=""><label for="core_competency_1">Conduct HR Planning and Operations</label></li>
@@ -44,8 +44,8 @@
 			</div>
 			<div class="main_selector box_3">
 				<h2>WTSP</h2>
-				<button class="toggle_button" data-contents=".item_3"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_3"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide3()" class="toggle_button" data-contents=".item_3"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe3" class="contents item_3"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="wtsp_1" value=""><label for="wtsp_1">Conduct HR Operations</label></li>
 					<li><input type="checkbox" id="wtsp_2" value=""><label for="wtsp_2">Conduct Deployment/Redeployment Operations</label></li>
@@ -74,8 +74,8 @@
 			</div>
 			<div class="main_selector box_4">
 				<h2>Individual Task</h2>
-				<button class="toggle_button" data-contents=".item_4"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_4"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide4()" class="toggle_button" data-contents=".item_4"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe4" class="contents item_4"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="ind_task_1" name="ind_task_1" value=""><label for="ind_task_1">Develop Subordinate Leaders Through Effective Counseling</label></li>
 					<li><input type="checkbox" id="ind_task_2" name="ind_task_2" value=""><label for="ind_task_2">Prepare Correspondence</label></li>
@@ -255,8 +255,8 @@
 			</div>
 			<div class="main_selector box_5">
 				<h2>Collective Task</h2>
-				<button class="toggle_button" data-contents=".item_5"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_5"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide5()" class="toggle_button" data-contents=".item_5"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe5" class="contents item_5"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="col_task_1" name="col_task_1" value=""><label for="col_task_1">Plan Establishment of Theater Gateway Personnel Accountability Team (PAT)</label></li>
 					<li><input type="checkbox" id="col_task_2" name="col_task_2" value=""><label for="col_task_2">Conduct Return to Duty Personnel Activities</label></li>
@@ -300,8 +300,8 @@
 			</div>
 			<div class="main_selector box_6">
 				<h2>Skill Level</h2>
-				<button class="toggle_button" data-contents=".item_6"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_6"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide6()" class="toggle_button" data-contents=".item_6"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe6" class="contents item_6"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="skill_level_1" name="skill_level_1" value=""><label for="skill_level_1">42A SL1</label></li>
 					<li><input type="checkbox" id="skill_level_2" name="skill_level_2" value=""><label for="skill_level_2">42A SL3</label></li>
@@ -317,8 +317,8 @@
 			</div>
 			<div class="main_selector box_7">
 				<h2>Subkey Function</h2>
-				<button class="toggle_button" data-contents=".item_7"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_7"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide7()" class="toggle_button" data-contents=".item_7"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe7" class="contents item_7"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="subkey_1" name="subkey_1" value=""><label for="subkey_1">HR Planning and Operations</label></li>
 					<li><input type="checkbox" id="subkey_2" name="subkey_2" value=""><label for="subkey_2">Operate HR Mission Command Nodes</label></li>
@@ -337,8 +337,8 @@
 			</div>
 			<div class="main_selector box_8">
 				<h2>Echelon</h2>
-				<button class="toggle_button" data-contents=".item_8"></button> <!-- expands and hides ul which gives list of available options -->
-				<ul class="contents item_8"> <!-- this ul is hidded until toggle_button is clicked -->
+				<button ng-click="showHide8()" class="toggle_button" data-contents=".item_8"></button> <!-- expands and hides ul which gives list of available options -->
+				<ul ng-show="showMe8" class="contents item_8"> <!-- this ul is hidded until toggle_button is clicked -->
 					<!-- each of the following lis will be a clickable option -->
 					<li><input type="checkbox" id="echelon_1" name="echelon_1" value=""><label for="echelon_1">HR Company</label></li>
 					<li><input type="checkbox" id="echelon_2" name="echelon_2" value=""><label for="echelon_2">MMT</label></li>
